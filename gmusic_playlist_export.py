@@ -1,8 +1,6 @@
 import gmusicapi
 from local_constants import account, password, music_path
 from file_management import pathfinder
-import os
-import eyeD3
 
 api = gmusicapi.Api()
 
