@@ -20,7 +20,7 @@ listids = userlists.values()
 
 music_path = music_path
 
-for id in listids:
-    songs = api.get_playlist_songs(id)
+for name in listnames:
+    songs = api.get_playlist_songs(userlists.get('name'))
     for song in songs:
         path = pathfinder(music_path, song)
