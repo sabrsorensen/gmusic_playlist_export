@@ -1,27 +1,29 @@
 import gmusicapi
-from getpass import getpass
+from local_constants import account, password, music_path
 import os
+import eyeD3
 
 api = gmusicapi.Api()
-#username = raw_input('Google Music Username: ')
-#password = getpass()
-api.login('omurcada', '99;6(;23*2X4>7^.(9^@6$@4@8$/L/9i<6Jdm764*3g34j$f)p')
+
+#from getpass import getpass
+#account = raw_input('Input your Google Music account:')
+#password = getpass("Password: ")
+#musicRoot = raw_input('Enter the location of your music library:')
+api.login(account, password)
+
 playlists = api.get_all_playlist_ids()
 
 userlists = playlists.get('user')
 listnames = userlists.keys()
 listids = userlists.values()
 
-music_path = '/Users/Murph/Music/iTunes/iTunes Music/'
-
-# for id in listids:
-#     songs = api.get_playlist_songs(id)
-#     for song in songs:
-#         trackName = song.get('name')
-#         trackArtist = song.get('artist')
-#         trackAlbumArtist = song.get('albumArtist')
-#         trackAlbum = song.get('album')
-#         trackNumber = song.get('track')
+music_path = music_path
 
 for root, dirs, files in os.walk(music_path):
     print files
+
+for id in listids:
+    songs = api.get_playlist_songs(id)
+    for song in songs:
+        trackInfo = [song.get('albumArtist'), song.get('album'), song.get('artist'), song.get('name'), "%02d" % song.get('track')]
+        print trackInfo
