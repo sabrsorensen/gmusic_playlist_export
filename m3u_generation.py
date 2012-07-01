@@ -1,5 +1,4 @@
 import eyeD3
-import mad
 
 __author__ = 'sabrsorensen'
 
