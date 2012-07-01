@@ -1,0 +1,10 @@
+import gmusicapi
+import getpass
+
+api = gmusicapi.Api()
+
+api.login('test@gmail.com','password')
+playlists = api.get_all_playlist_ids()
+print playlists
+print sorted(playlists.values())
+print sorted(playlists.keys())
