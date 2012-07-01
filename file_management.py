@@ -11,4 +11,4 @@ def pathfinder(root, song):
             tag.link(os.path.join(path, filename))
             if tag.getArtist() == song.get('artist') and tag.getAlbum() == song.get('album') and tag.getTitle() == song.get('title'):
                 print os.path.join(path, filename)
-                yield os.path.join(path, filename)
+                return os.path.join(path, filename)
