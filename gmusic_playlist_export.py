@@ -1,5 +1,6 @@
 import gmusicapi
 from local_constants import account, password, music_path
+from file_management import pathfinder
 import os
 import eyeD3
 
@@ -19,11 +20,7 @@ listids = userlists.values()
 
 music_path = music_path
 
-for root, dirs, files in os.walk(music_path):
-    print files
-
 for id in listids:
     songs = api.get_playlist_songs(id)
     for song in songs:
-        trackInfo = [song.get('albumArtist'), song.get('album'), song.get('artist'), song.get('name'), "%02d" % song.get('track')]
-        print trackInfo
+        path = pathfinder(music_path, song)
