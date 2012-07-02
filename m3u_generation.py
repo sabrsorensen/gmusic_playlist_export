@@ -29,7 +29,7 @@ class M3U_Gen:
     def M3UClose(self):
         self.m3u_out.close()
 
-
+'''Credit to Sophie Gage at http://stackoverflow.com/a/698714 for the below filename sanitation.'''
 def removeDisallowedFilenameChars(filename):
     validFilenameChars = "-_.() %s%s" % (string.ascii_letters, string.digits)
     cleanedFilename = unicodedata.normalize('NFKD', filename).encode('ASCII', 'ignore')
