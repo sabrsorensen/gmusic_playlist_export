@@ -2,8 +2,6 @@ import os
 import fnmatch
 import eyeD3
 from mutagen import flac, mp3, asf, ogg, mp4
-import re
-import sys
 
 
 def pathfinder(root, song):
@@ -17,19 +15,19 @@ def pathfinder(root, song):
                 tag.link(os.path.join(path, filename))
                 if tag.getTitle() == song.get('title') and tag.getArtist() == song.get('artist') and tag.getAlbum() == song.get('album'):
                     if foundMultiple or foundUnsupported:
-                        print "Multiple possibilities have been found. Accepting: "  + song.get('artist') + " - " + song.get('album') + " - " + song.get('title')
+                        print "Multiple possibilities have been found. Accepting: %s - %s - %s" % (song.get('artist'), song.get('album'), song.get('title'))
                         print filename + '\n'
                     return os.path.join(path, filename)
                 else:
                     foundMultiple = True
                     print filename
-                    print "Song " + song.get('artist') + " - " + song.get('album') + " - " + song.get('title') + " not found."
-                    print "Found " + tag.getArtist() + " - " + tag.getAlbum() + " - " + tag.getTitle() + " instead.\n"
+                    print "Song %s - %s - %s not found." % (song.get('artist'), song.get('album'), song.get('title'))
+                    print "Found %s - %s - %s instead.\n" % (tag.getArtist(), tag.getAlbum(), tag.getTitle())
                     pass
             else:
                 foundUnsupported = True
                 print "Found %s." % filename
-                print "No .mp3 found matching %s - %s - %s. Other filetypes unsupported at this time.\n" % (song.get('artist'),song.get('album'),song.get('title'))
+                print "No .mp3 found matching %s - %s - %s. Other filetypes unsupported at this time.\n" % (song.get('artist'), song.get('album'), song.get('title'))
 
-    print "Song " + song.get('artist') + " - " + song.get('album') + " - " + song.get('title') + " not found locally."
+    print "Song %s - %s - %s not found locally." % (song.get('artist'), song.get('album'), song.get('title'))
     raw_input("Press Enter to continue...\n")
