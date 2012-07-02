@@ -10,7 +10,6 @@ def pathfinder(root, song):
             tag = eyeD3.Tag()
             tag.link(os.path.join(path, filename))
             if tag.getTitle() == song.get('title') and tag.getArtist() == song.get('artist') and tag.getAlbum() == song.get('album'):
-                print os.path.join(path, filename)
                 return os.path.join(path, filename)
             else:
                 return None
