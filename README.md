@@ -24,11 +24,11 @@ Install the required dependencies, then manuever to the directory you downloaded
 
 Known Bugs
 ===========
-FLAC, WMA, and other files that have tags incompatible with eyeD3 aren't added to playlists.
-Square brackets "[]" in tags somehow block a match being made.
-Tags must match **exactly**, otherwise possible matches for local files are rejected.
+   * FLAC, WMA, and other files that have tags incompatible with eyeD3 aren't added to playlists.
+   * Square brackets "[]" in tags somehow block a match being made.
+   * Tags must match **exactly**, otherwise possible matches for local files are rejected.
 
 To-do
 ======
-Add support to download files from Google Music when not found locally.
-Tag sync between local and Google Music?
+   * Add support to download files from Google Music when not found locally.
+   * Tag sync between local and Google Music?
