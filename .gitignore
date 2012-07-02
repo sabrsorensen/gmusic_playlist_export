@@ -2,6 +2,7 @@
 ## Local
 #################
 local_constants.py
+*.m3u
 
 #################
 ## PyCharm
