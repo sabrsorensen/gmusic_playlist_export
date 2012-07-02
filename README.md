@@ -21,3 +21,13 @@ Use
 ====
 
 Install the required dependencies, then manuever to the directory you downloaded the script to. Run the script with `python gmusic_playlist_export.py` and answer the prompts in the CLI. **Make sure the tracks have the song title in the filename, and the metadata matches between the local and Google Music copies of the music**. All generated playlists will be placed in a GMusic Exported Playlists folder inside your specified music folder.
+
+Known Bugs
+===========
+FLAC, WMA, and other files that have tags incompatible with eyeD3 aren't added to playlists.
+Square brackets "[]" in tags somehow block a match being made.
+Tags must match **exactly**, otherwise possible matches for local files are rejected.
+
+To-do
+======
+Add support to download files from Google Music when not found locally.
