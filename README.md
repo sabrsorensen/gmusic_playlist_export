@@ -14,8 +14,8 @@ must match the tags stored in Google Music.
 Dependencies
 ==============
 
-[gmusicapi](http://pypi.python.org/pypi/gmusicapi/2012.05.04)
-[eyeD3](http://pypi.python.org/pypi/eyeD3-pip/0.6.19)
+   * [gmusicapi](http://pypi.python.org/pypi/gmusicapi/2012.05.04)
+   * [eyeD3](http://pypi.python.org/pypi/eyeD3-pip/0.6.19)
 
 Use
 ====
