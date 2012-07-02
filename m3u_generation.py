@@ -10,7 +10,9 @@ class M3U_Gen:
 
     def M3UEntry(self,path):
         self.tagger.link(path)
-        self.m3u_out.write("#EXTINF:," + self.tagger.getArtist() + " - " + self.tagger.getTitle + "\n")
+        print self.tagger.getArtist()
+        print self.tagger.getTitle()
+        self.m3u_out.write("#EXTINF:," + self.tagger.getArtist() + " - " + self.tagger.getTitle() + "\n")
         self.m3u_out.write(path + "\n")
 
     def M3UClose(self):
