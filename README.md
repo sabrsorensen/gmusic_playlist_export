@@ -15,7 +15,8 @@ Dependencies
 ==============
 
    * [gmusicapi](http://pypi.python.org/pypi/gmusicapi/2012.05.04)
-   * [eyeD3](http://pypi.python.org/pypi/eyeD3-pip/0.6.19)
+   * [eyeD3](http://pypi.python.org/pypi/eyeD3-pip/0.6.19) (Phasing out.)
+   * [mutagen](http://pypi.python.org/pypi/mutagen/1.20)
 
 Use
 ====
