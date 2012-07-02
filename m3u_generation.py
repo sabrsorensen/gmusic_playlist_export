@@ -1,7 +1,9 @@
 import eyeD3
 import string
+import unicodedata
 
 __author__ = 'sabrsorensen'
+
 
 class M3U_Gen:
     def __init__(self, name):
@@ -22,10 +24,8 @@ class M3U_Gen:
     def M3UClose(self):
         self.m3u_out.close()
 
-import unicodedata
-
-validFilenameChars = "-_.() %s%s" % (string.ascii_letters, string.digits)
 
 def removeDisallowedFilenameChars(filename):
+    validFilenameChars = "-_.() %s%s" % (string.ascii_letters, string.digits)
     cleanedFilename = unicodedata.normalize('NFKD', filename).encode('ASCII', 'ignore')
     return ''.join(c for c in cleanedFilename if c in validFilenameChars)
