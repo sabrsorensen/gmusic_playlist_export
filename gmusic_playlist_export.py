@@ -35,3 +35,5 @@ for name in listnames:
     playGen.M3UClose()
 
 print("Your playlists have been exported to " + music_root + "GMusic Exported Playlists, happy listening!")
+
+api.logout()
