@@ -31,3 +31,4 @@ Tags must match **exactly**, otherwise possible matches for local files are reje
 To-do
 ======
 Add support to download files from Google Music when not found locally.
+Tag sync between local and Google Music?
