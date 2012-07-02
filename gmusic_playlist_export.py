@@ -6,25 +6,19 @@ from getpass import getpass
 
 api = gmusicapi.Api()
 
-
 account = raw_input('Input your Google Music account:')
 password = getpass("Password: ")
 musicRoot = raw_input('Enter the location of your music library:')
 api.login(account, password)
 
-playlists = api.get_all_playlist_ids()
-
-userlists = playlists.get('user')
+userlists = api.get_all_playlist_ids().get('user')
 listnames = userlists.keys()
-listids = userlists.values()
-
-music_path = music_path
 
 for name in listnames:
-    playGen = M3U_Gen(name,music_path)
+    playGen = M3U_Gen(name,musicRoot)
     songs = api.get_playlist_songs(userlists.get(name))
     for song in songs:
-        path = pathfinder(music_path, song)
+        path = pathfinder(musicRoot, song)
         if path is None:
             continue
         playGen.M3UEntry(path)
