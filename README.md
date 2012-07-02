@@ -24,7 +24,7 @@ Install the required dependencies, then maneuver to the directory you downloaded
 
 Known Bugs
 ===========
-   * FLAC, WMA, and other files that have tags incompatible with eyeD3 aren't added to playlists. (Message displayed when these files are detected)
+   * Issues with reading the tags of some WMA files.
    * Square brackets "[]" in tags somehow block a match being made.
    * Tags must match **exactly**, otherwise possible matches for local files are rejected.
 
