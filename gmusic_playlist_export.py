@@ -24,6 +24,8 @@ for name in listnames:
     songs = api.get_playlist_songs(userlists.get(name))
     for song in songs:
         path = pathfinder(music_path, song)
+        if path == None:
+            continue
         playGen.M3UEntry(path)
 
     playGen.M3UClose()
