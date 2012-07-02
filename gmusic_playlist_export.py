@@ -1,4 +1,5 @@
 import gmusicapi
+import os
 from file_management import pathfinder
 from m3u_generation import M3U_Gen
 from getpass import getpass
@@ -7,11 +8,16 @@ api = gmusicapi.Api()
 
 account = raw_input('Input your Google Music account: ')
 password = getpass("Password: ")
-try:
-    api.login(account, password)
-except api.NotLoggedIn:
-    print("Your account details didn't check out. Please restart the script and try again.")
+while not api.login(account, password):
+    print("Your account details didn't check out. Please check your login details and try again")
+    account = raw_input('Input your Google Music account: ')
+    password = getpass("Password: ")
+
 music_root = raw_input('Enter the location of your music library: ')
+while not os.path.isdir(music_root):
+    print("Music library not found, make sure you have the correct path and try again.")
+    music_root = raw_input('Enter the location of your music library: ')
+
 
 userlists = api.get_all_playlist_ids().get('user')
 listnames = userlists.keys()
