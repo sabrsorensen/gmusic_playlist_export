@@ -25,7 +25,7 @@ Install the required dependencies, then maneuver to the directory you downloaded
 Known Bugs
 ===========
    * Issues with reading the tags of some WMA files.
-   * Square brackets "[]" in tags somehow block a match being made.
+   * Square brackets "[]" in tags somehow block a match being made. (possibly fixed by using mutagen, haven't been able to test yet.)
    * Tags must match **exactly**, otherwise possible matches for local files are rejected.
 
 To-do
